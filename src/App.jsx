@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import React from "react";
+import AppNavbar from "./components/Navbar";
 
 function App() {
-
   return (
-   <p className="mensaje">Página en proceso</p>
-  )
+    <>
+      <AppNavbar />
+      <div className="container mt-4">
+        <h1>Bienvenidos</h1>
+      </div>
+    </>
+  );
 }
 
-export default App
-  
+export default App;
