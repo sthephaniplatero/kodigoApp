@@ -1,0 +1,58 @@
+/* Centrar todo el contenido de la página */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8e2de2, #ff6a00); /* degradado morado → naranja */
+  font-family: Arial, sans-serif;
+}
+
+/* Formulario centrado */
+.login-form {
+  background: rgba(255, 255, 255, 0.1); /* semitransparente */
+  backdrop-filter: blur(10px); /* efecto vidrio */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  color: white;
+}
+
+/* Inputs estilo */
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Botón degradado */
+.btn-gradient {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #8e2de2, #ff6a00);
+  transition: 0.3s;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+}
+
+/* Botón para cambiar login/registro */
+.toggle-btn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+}

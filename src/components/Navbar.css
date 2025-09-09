@@ -1,12 +1,12 @@
 /* Fondo degradado */
 .custom-navbar {
-  background: linear-gradient(90deg, #6a0dad, #ff7e5f);
+  background: linear-gradient(90deg,#6a0dad, #ff7e5f)
 }
 
 /* Logo */
 .logo {
-  width: 35px;
-  height: 35px;
+  width: 150px;
+  height: auto;
   margin-right: 8px;
 }
 

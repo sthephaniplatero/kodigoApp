@@ -10,11 +10,10 @@ function AppNavbar() {
         {/* Logo */}
         <Navbar.Brand as={Link} to="/" className="text-white fw-bold">
           <img
-            src="/logo.png" 
+            src="/logo.webp" 
             alt="Logo"
             className="logo"
-          />{" "}
-          MiApp
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
@@ -24,7 +23,7 @@ function AppNavbar() {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/signin" className="nav-link-custom">
-              Sign In
+              Iniciar Sesion
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

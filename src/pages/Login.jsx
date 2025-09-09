@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../services/firebase";
-import { useAuth } from "../hooks/useAuth";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useAuth } from "../hooks/useAuth.jsx";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
 
 function Login() {
   const { user, loading } = useAuth();
@@ -10,14 +11,13 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isRegister, setIsRegister] = useState(false); // switch entre login y registro
+  const [isRegister, setIsRegister] = useState(false);
 
-  if (loading) return <p>Cargando...</p>;
-
-  if (user) {
-    navigate("/profile");
-    return null;
-  }
+  useEffect(() => {
+    if (!loading && user) {
+      navigate("/dashboard");
+    }
+  }, [user, loading, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,21 +25,22 @@ function Login() {
 
     try {
       if (isRegister) {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(userCredential.user, { displayName: name });
+        await createUserWithEmailAndPassword(auth, email, password);
       } else {
         await signInWithEmailAndPassword(auth, email, password);
       }
-      navigate("/profile"); // redirige a Profile después de login/registro
+      
     } catch (err) {
       console.error(err);
       setError(isRegister ? "Error al registrar el usuario" : "Correo o contraseña incorrectos");
     }
   };
 
+  if (loading) return <p>Cargando...</p>;
+
   return (
     <div className="container mt-4">
-      <h2>{isRegister ? "Crear Cuenta" : "Iniciar Sesión"}</h2>
+      <h2>{isRegister ? "Crear Cuenta" : "Acceder"}</h2>
       {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit} className="w-50">
         <div className="mb-3">
