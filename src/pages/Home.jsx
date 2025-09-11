@@ -1,9 +1,38 @@
-function Home() {
+import { useEffect, useState } from "react";
+import { rm } from "../api/rm";
+
+export default function Home() {
+    const [acomodaciones, setAcomodaciones] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await rm.get("/accomodations");
+                setAcomodaciones(data);
+            } catch (err) {
+                console.error("Error cargando hoteles:", err);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
-        <div className="container mt-4">
-            <h1>Home</h1>
+        <div className="p-6">
+            <h1 className="text-2xl font-bold mb-4">Hoteles disponibles</h1>
+            {acomodaciones.length === 0 ? (
+                <p>No hay hoteles disponibles.</p>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {acomodaciones.map((hotel) => (
+                        <div key={hotel.id} className="border rounded-xl shadow p-4">
+                            <img src={hotel.image} alt={hotel.name} className="w-full h-48 object-cover rounded-lg" />
+                            <h2 className="text-xl font-semibold mt-2">{hotel.name}</h2>
+                            <p className="text-gray-600">{hotel.address}</p>
+                            <p className="text-sm mt-2">{hotel.description}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
-
-export default Home;

@@ -14,9 +14,13 @@ function Login() {
     setError("");
 
     try {
-      const { data } = await rm.post("/api/V1/login", { email, password });
-      localStorage.setItem("token", data.token); 
-      navigate("/dashboard"); 
+      // login correcto
+      const { data } = await rm.post("/login", { email, password });
+
+      // guarda token
+      localStorage.setItem("token", data.token);
+
+      navigate("/"); 
     } catch (err) {
       setError(err.response?.data?.message || "Error al iniciar sesión");
     }
