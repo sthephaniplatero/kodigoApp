@@ -5,5 +5,3 @@ export const rm = axios.create({
     timeout: 10000,
 });
 
-
-
