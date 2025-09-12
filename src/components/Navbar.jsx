@@ -1,7 +1,8 @@
+// src/components/AppNavbar.jsx
 import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
+import { FaCalendarCheck } from "react-icons/fa";
 
 function AppNavbar() {
   const navigate = useNavigate();
@@ -13,32 +14,31 @@ function AppNavbar() {
   };
 
   return (
-    <Navbar expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="navbar fixed-top shadow-sm">
       <Container>
-        {/* Logo */}
-        <Navbar.Brand as={Link} to="/" className="text-white fw-bold">
-          <img src="/logo.webp" alt="Logo" className="logo" />
+        <Navbar.Brand as={Link} to="/" className="navbar-brand">
+          <span className="text-gold">Sunflower</span>
+          <span className="text-dark">Hotels</span>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" className="nav-link-custom">
-              Home
-            </Nav.Link>
+          <Nav className="ms-auto me-3 align-items-lg-center">
+            <Nav.Link as={Link} to="/" className="nav-link">Inicio</Nav.Link>
 
             {!token ? (
-              <Nav.Link as={Link} to="/signin" className="nav-link-custom">
+              <Link
+                to="/signin"
+                className="btn-gold ms-lg-3 my-2 my-lg-0"
+              >
                 Iniciar Sesión
-              </Nav.Link>
+              </Link>
             ) : (
               <>
-                <Nav.Link as={Link} to="/dashboard" className="nav-link-custom">
-                  Dashboard
-                </Nav.Link>
+                <Nav.Link as={Link} to="/dashboard" className="nav-link">Dashboard</Nav.Link>
                 <Button
                   variant="danger"
-                  className="ms-2"
+                  className="ms-lg-2 my-2 my-lg-0"
                   onClick={handleLogout}
                 >
                   Logout
@@ -53,4 +53,3 @@ function AppNavbar() {
 }
 
 export default AppNavbar;
-
