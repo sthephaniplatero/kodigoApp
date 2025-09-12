@@ -1,6 +1,7 @@
-/* src/styles/Luxe.css */
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
+/* colores */
 :root {
     --gold: #D4AF37;
     --light-gold: #F4E4A6;
@@ -148,9 +149,74 @@ h6 {
 
 /* About */
 .about-section {
-    background-color: var(--light-gray);
-    padding: 100px 0;
+    padding: 50px 0;
 }
+
+/* Testimonios */
+.testimonials-section {
+  padding: 100px 0;
+  background: linear-gradient(rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.05));
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.testimonial-text::before {
+    content: "“";
+    font-size: 60px;
+    color: var(--light-gold);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.author-info h5 {
+  margin-bottom: 5px;
+  color: var(--dark-gray);
+}
+
+.author-info span {
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.rating {
+  color: var(--gold);
+  margin-top: 5px;
+}
+
 
 /* Footer */
 .footer {

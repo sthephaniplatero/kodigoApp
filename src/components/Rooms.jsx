@@ -24,10 +24,10 @@ const rooms = [
 
 function Rooms() {
   return (
-    <section className="py-5 bg-light">
+    <section className="py-4 bg-light">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="mb-3">Habitaciones Destacadas</h2>
+          <h2 className="mb-3 mt-4">Habitaciones Destacadas</h2>
           <p className="text-muted">Descubre nuestro exclusivo portfolio de alojamiento</p>
         </div>
 

@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Values from "../components/Values";
 import Rooms from "../components/Rooms";
 import About from "../components/About";
+import Testimonials from "../components/Testimonials";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Values />
       <Rooms />
       <About />
+      <Testimonials />
     </>
   );
 }
