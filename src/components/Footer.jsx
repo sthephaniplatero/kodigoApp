@@ -1,14 +1,51 @@
-import "./Footer.css";
+// src/components/Footer.jsx
+import React from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
-function AppNavbar() {
-    return (
-        <footer className="text-center p-2 fixed-bottom colorfondo">
-            <div>
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+            <div className="col-md-4 mb-4">
+                <h3 className="footer-title">Sunflower<span className="text-white">Hotels</span></h3>
+                <p>Redefiniendo la experiencia hotelera de lujo desde 1985. Donde cada detalle cuenta y cada momento perdura.</p>
+                <div className="social-icons mt-3">
+                    <a href="#"><FaFacebookF /></a>
+                    <a href="#"><FaInstagram /></a>
+                    <a href="#"><FaTwitter /></a>
+                    <a href="#"><FaLinkedinIn /></a>
+                </div>
             </div>
-            
-            <p className="copy">Copyright (c) KODIGO - 2025. All rights reserved.</p>
-        </footer>
-    );
+
+            <div className="col-md-2 mb-4">
+                <h4 className="footer-title">Enlaces</h4>
+                <div className="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="#">Habitaciones</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Destinos</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+
+            <div className="col-md-3 mb-4">
+                <h4 className="footer-title">Contacto</h4>
+                <div className="footer-links">
+                    <a href="#"><FaMapMarkerAlt className="me-2" /> Av. Principal 123, Ciudad</a>
+                    <a href="#"><FaPhone className="me-2" /> +1 234 567 890</a>
+                    <a href="#"><FaEnvelope className="me-2" /> info@luxehotels.com</a>
+                </div>
+            </div>
+        </div>
+
+        <hr style={{borderColor: "rgba(255,255,255,0.1)"}} />
+        <div className="text-center">
+            <p className="mb-0">© 2023 LuxeHotels. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default AppNavbar;
+export default Footer;

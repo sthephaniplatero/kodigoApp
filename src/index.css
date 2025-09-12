@@ -1,0 +1,206 @@
+/* src/styles/Luxe.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --gold: #D4AF37;
+    --light-gold: #F4E4A6;
+    --dark-gold: #B8860B;
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+    --dark-gray: #212529;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Acomodar espacio cuando la navbar es fixed-top */
+.main-content {
+    padding-top: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.btn-gold:hover {
+    background-color: var(--dark-gold);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold) !important;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: var(--dark-gray) !important;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Hero */
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://raw.githubusercontent.com/victoriavalencia06/project-images/refs/heads/main/hotels/hotel-hero-image.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+/* Valores */
+.value-card {
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    height: 100%;
+    background: #fff;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+/* Habitaciones */
+.room-card {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+    height: 250px;
+    object-fit: cover;
+}
+
+.room-price {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* About */
+.about-section {
+    background-color: var(--light-gray);
+    padding: 100px 0;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 70px 0 30px;
+}
+
+.footer-title {
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--gold);
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .navbar-nav {
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+    }
+}
+
+.text-gold {
+    color: var(--gold);
+}
