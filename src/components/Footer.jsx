@@ -34,7 +34,7 @@ function Footer() {
                 <div className="footer-links">
                     <a href="#"><FaMapMarkerAlt className="me-2" /> Av. Principal 123, Ciudad</a>
                     <a href="#"><FaPhone className="me-2" /> +503 2222-2222</a>
-                    <a href="#"><FaEnvelope className="me-2" /> info@luxehotels.com</a>
+                    <a href="#"><FaEnvelope className="me-2" /> info@sunflowerhotels.com</a>
                 </div>
             </div>
         </div>
