@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { rm } from "../api/rm";
-import HotelCard from "../components/HotelCard"; // 👈 importa el componente
+import HotelCard from "../components/HotelCard";
 
 export default function Home() {
   const [acomodaciones, setAcomodaciones] = useState([]);
@@ -18,18 +18,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Hoteles disponibles</h1>
+    <div className="container py-5 mt-4">
+      <h1 className="mb-4">Hoteles disponibles</h1>
       {acomodaciones.length === 0 ? (
         <p>No hay hoteles disponibles.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="row">
           {acomodaciones.map((hotel) => (
-            <HotelCard key={hotel.id} hotel={hotel} />
+            <div key={hotel.id} className="col-md-4 mb-4">
+              <HotelCard hotel={hotel} />
+            </div>
           ))}
         </div>
       )}
     </div>
   );
 }
-
