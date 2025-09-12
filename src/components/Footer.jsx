@@ -41,7 +41,7 @@ function Footer() {
 
         <hr style={{borderColor: "rgba(255,255,255,0.1)"}} />
         <div className="text-center">
-            <p className="mb-0">© 2023 LuxeHotels. Todos los derechos reservados.</p>
+            <p className="mb-0">© 2025 LuxeHotels. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
