@@ -33,7 +33,7 @@ function Footer() {
                 <h4 className="footer-title">Contacto</h4>
                 <div className="footer-links">
                     <a href="#"><FaMapMarkerAlt className="me-2" /> Av. Principal 123, Ciudad</a>
-                    <a href="#"><FaPhone className="me-2" /> +1 234 567 890</a>
+                    <a href="#"><FaPhone className="me-2" /> +503 2222-2222</a>
                     <a href="#"><FaEnvelope className="me-2" /> info@luxehotels.com</a>
                 </div>
             </div>
@@ -41,7 +41,7 @@ function Footer() {
 
         <hr style={{borderColor: "rgba(255,255,255,0.1)"}} />
         <div className="text-center">
-            <p className="mb-0">© 2025 LuxeHotels. Todos los derechos reservados.</p>
+            <p className="mb-0">© 2025 SunflowerHotels. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
