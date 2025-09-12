@@ -7,7 +7,7 @@ function About() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <img src="/about.jpg" className="img-fluid rounded shadow" alt="Lobby elegante" />
+            <img src="https://raw.githubusercontent.com/victoriavalencia06/project-images/refs/heads/main/hotels/about.jpg" className="img-fluid rounded shadow" alt="Lobby elegante" />
           </div>
           <div className="col-md-6 mt-4">
             <h2>Sobre Nosotros</h2>
