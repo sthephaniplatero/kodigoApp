@@ -41,7 +41,7 @@ function Rooms() {
                   <p className="card-text">{r.desc}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <span className="room-price">{r.price}</span>
-                    <button className="btn btn-gold btn-sm">Reservar</button>
+                    <button className="btn-gold btn-sm">Reservar</button>
                   </div>
                 </div>
               </div>

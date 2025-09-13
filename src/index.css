@@ -154,31 +154,31 @@ h6 {
 
 /* Testimonios */
 .testimonials-section {
-  padding: 100px 0;
-  background: linear-gradient(rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.05));
+    padding: 100px 0;
+    background: linear-gradient(rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.05));
 }
 
 .testimonial-card {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .testimonial-text {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 20px;
-  position: relative;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .testimonial-text::before {
@@ -190,31 +190,31 @@ h6 {
 }
 
 .testimonial-author {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .testimonial-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
 }
 
 .author-info h5 {
-  margin-bottom: 5px;
-  color: var(--dark-gray);
+    margin-bottom: 5px;
+    color: var(--dark-gray);
 }
 
 .author-info span {
-  color: var(--gold);
-  font-size: 0.9rem;
+    color: var(--gold);
+    font-size: 0.9rem;
 }
 
 .rating {
-  color: var(--gold);
-  margin-top: 5px;
+    color: var(--gold);
+    margin-top: 5px;
 }
 
 
@@ -252,6 +252,42 @@ h6 {
 
 .social-icons a:hover {
     color: var(--gold);
+}
+
+/* login */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f6f8;
+  padding: 20px;
+}
+
+/* Caja del formulario */
+.login-box {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Botón dorado */
+.btn-gold-login {
+  background-color: var(--gold);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-gold-login:hover {
+  background-color: #8b6225;
 }
 
 /* Small screens */

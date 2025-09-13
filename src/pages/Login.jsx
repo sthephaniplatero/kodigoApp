@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { rm } from "../api/rm";
-import './Login.css'; 
+import { FaEnvelope, FaLock, FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 
-function Login() {
+export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,44 +14,73 @@ function Login() {
     setError("");
 
     try {
-      // login correcto
       const { data } = await rm.post("/login", { email, password });
-
-      // guarda token
       localStorage.setItem("token", data.token);
-
-      navigate("/"); 
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Error al iniciar sesión");
     }
   };
 
   return (
-    <div className="login-page">
-      <form onSubmit={handleSubmit} className="login-form">
-        <h2 className="text-center mb-4">Iniciar Sesión</h2>
+    <div className="login-page mt-4">
+      <div className="login-box">
+        <h2 className="mb-3">Iniciar Sesión</h2>
+        <p className="text-muted mb-4">
+          Ingresa tus credenciales para acceder a tu cuenta
+        </p>
+
         {error && <div className="alert alert-danger">{error}</div>}
 
-        <label>Correo Electrónico</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        {/* Formulario */}
+        <form onSubmit={handleSubmit}>
+          {/* Email */}
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">Correo Electrónico</label>
+            <div className="input-group">
+              <span className="input-group-text">
+                <FaEnvelope />
+              </span>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="correo@ejemplo.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+          </div>
 
-        <label>Contraseña</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          {/* Contraseña */}
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Contraseña</label>
+            <div className="input-group">
+              <span className="input-group-text">
+                <FaLock />
+              </span>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Ingresa tu contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-text text-end">
+              <a href="#" className="text-decoration-none">¿Olvidaste tu contraseña?</a>
+            </div>
+          </div>
 
-        <button type="submit" className="btn-gradient">Ingresar</button>
-      </form>
+          {/* Botón */}
+          <button type="submit" className="btn-gold-login w-100 mb-4">
+            Iniciar Sesión
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
-
-export default Login;
