@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { rm } from "../api/rm";
-import { FaEnvelope, FaLock, FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaSpinner } from "react-icons/fa";
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     try {
       const { data } = await rm.post("/login", { email, password });
@@ -19,6 +21,8 @@ export default function Login() {
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Error al iniciar sesión");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,7 +36,6 @@ export default function Login() {
 
         {error && <div className="alert alert-danger">{error}</div>}
 
-        {/* Formulario */}
         <form onSubmit={handleSubmit}>
           {/* Email */}
           <div className="mb-3">
@@ -49,6 +52,7 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={loading}
               />
             </div>
           </div>
@@ -68,6 +72,7 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                disabled={loading}
               />
             </div>
             <div className="form-text text-end">
@@ -76,8 +81,18 @@ export default function Login() {
           </div>
 
           {/* Botón */}
-          <button type="submit" className="btn-gold-login w-100 mb-4">
-            Iniciar Sesión
+          <button
+            type="submit"
+            className="btn-gold-login w-100 mb-4"
+            disabled={loading}
+          >
+            {loading ? (
+              <span>
+                <FaSpinner className="me-2 spin" /> Validando...
+              </span>
+            ) : (
+              "Iniciar Sesión"
+            )}
           </button>
         </form>
       </div>

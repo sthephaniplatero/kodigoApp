@@ -290,6 +290,17 @@ h6 {
   background-color: #8b6225;
 }
 
+/* Spinner animado */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 /* Small screens */
 @media (max-width: 768px) {
     .hero-title {

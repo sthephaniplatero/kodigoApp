@@ -20,7 +20,7 @@ export default function HotelCard({ hotel }) {
 
         {/* Botón de reservar */}
         <div className="d-flex justify-content-end">
-          <button className="btn btn-gold btn-sm">Reservar</button>
+          <button className="btn-gold btn-sm">Reservar</button>
         </div>
       </div>
     </div>
